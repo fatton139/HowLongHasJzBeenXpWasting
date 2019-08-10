@@ -1,0 +1,36 @@
+{
+  "name": "howlonghasjzbeenxpwasting",
+  "version": "1.0.0",
+  "description": "Checks how log jz has been xp wasting",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run tsc && cross-env NODE_PATH=./ node ./bin/www",
+    "tsc": "cross-env NODE_PATH=./ tsc"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Dotma",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "@types/node": "^9.6.41",
+    "@types/request": "^2.48.1",
+    "@types/request-promise": "^4.1.42",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "less-middleware": "^3.0.1",
+    "mocha": "^5.2.0",
+    "morgan": "^1.9.1",
+    "osrs-json-hiscores": "^1.2.2",
+    "pug": "^2.0.3",
+    "request-promise": "^4.2.2",
+    "reset.css": "^2.0.2",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "tslint": "^5.11.0"
+  }
+}
