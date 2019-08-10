@@ -12,9 +12,9 @@ function fetchAndSetData() {
 
 
 function refresh() {
-    setTimeout(refresh, 5000);
+    setTimeout(refresh, 60000);
     fetchAndSetData();
 }
 
 fetchAndSetData();
-setTimeout(refresh, 5000);
+setTimeout(refresh, 60000);
