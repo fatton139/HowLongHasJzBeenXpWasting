@@ -4,8 +4,11 @@ import * as logger from "morgan";
 import * as cookieParser from "cookie-parser";
 import * as bodyParser from "body-parser";
 import * as lessMiddleware from "less-middleware";
+import * as dotenv from "dotenv";
 
 import index from "./routes/index";
+
+dotenv.config();
 
 const app = express();
 
