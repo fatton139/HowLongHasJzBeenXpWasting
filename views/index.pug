@@ -7,14 +7,14 @@ block content
         section
             p How long has JZ been XP Wasting? 😂
             h1 JZ HAS BEEN XP WASTING FOR 
-                span#wasted-hours  ?
+                span#wasted-hours  #{lastXpUpdateBreakdown.hours} 
                 |  HOUR(S) AND 
-                span#wasted-minutes  ? 
+                span#wasted-minutes  #{lastXpUpdateBreakdown.minutes} 
                 |  MINUTE(S)
             p.end XP Wasting Since : 
-                span#wasting-since ?
+                span#wasting-since #{lastXpUpdate}
     section.stats
         p.gains
-            span#xp-diff ? 
+            span#xp-diff #{xpDifferenceSinceUpdate} 
             |  xp gained since last online
     script(src="scripts/index.js")

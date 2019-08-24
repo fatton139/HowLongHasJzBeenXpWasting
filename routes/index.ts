@@ -63,6 +63,17 @@ router.get("/", async (req, res) => {
     });
     const db = client.db("Cluster0");
     collection = db.collection("data");
+    const currentDate: Date = new Date();
+    const latestData: Player = await hiscores.getStats("Jz Cx");
+    const lastXpUpdate = await getLastXpUpdate();
+    const lastUpdateData = await getLastUpdateData();
+    res.render("index", {
+        playerData: latestData,
+        lastXpUpdate: getFormattedDateTimeString(lastXpUpdate),
+        xpDifferenceSinceUpdate: computeXpDifference(lastUpdateData, latestData),
+        lastXpUpdateBreakdown: getLastXpUpdateBreakdown(currentDate, lastXpUpdate),
+    });
+});
 
 router.get("/isJzXpWaste", async (req, res) => {
     const currentDate: Date = new Date();
