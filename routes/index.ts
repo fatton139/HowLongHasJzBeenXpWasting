@@ -77,13 +77,13 @@ router.get("/", async (req, res) => {
 
 router.get("/isJzXpWaste", async (req, res) => {
     const currentDate: Date = new Date();
-    const latestData: Player = await hiscores.getStats("Assasindie");
+    const latestData: Player = await hiscores.getStats("Jz Cx");
     let lastXpUpdate = await getLastXpUpdate();
     let lastUpdateData = await getLastUpdateData();
 
     if (hasXpDifference(latestData, lastUpdateData)) {
-        await collection.updateOne({}, { $set: {lastXpUpdate: currentDate}});
-        await collection.updateOne({}, { $set: {lastUpdateData: latestData}});
+        await collection.updateOne({}, { $set: {lastXpUpdate: currentDate}}, {upsert: true});
+        await collection.updateOne({}, { $set: {lastUpdateData: latestData}}, {upsert: true});
         lastXpUpdate = currentDate;
         lastUpdateData = latestData;
     }
